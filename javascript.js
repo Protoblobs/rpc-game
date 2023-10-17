@@ -1,6 +1,5 @@
 function getComputerChoice() {
         selectNumber = Math.floor(Math.random() * 100);
-        console.log(selectNumber);
         if (selectNumber >= 1 && selectNumber <= 33){
             let computerSelection = "Rock";
             return computerSelection;
@@ -21,19 +20,83 @@ function oneRound(playerSelection , computerSelection){
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
     if (playerSelection == "Rock" && computerSelection == "Scissors"){
-        return result = "Rock beats Scissors. You win.";
+        console.log("Rock beats Scissors. You win.");
+        return result = 1; 
         } else if (playerSelection == "Paper" && computerSelection == "Rock") {
-            return result = "Paper beats Rock. You win."; 
+            console.log("Paper beats Rock. You win.");
+            return result = 1;  
         } else if (playerSelection == "Scissors" && computerSelection == "Paper") {
-            return result = "Scissors beats paper. You win.";
+            console.log("Scissors beats paper. You win.");
+            return result = 1;
         } else if (playerSelection == "Rock" && computerSelection == "Paper"){
-            return result = "Paper beats rock. You lose.";
+            console.log("Paper beats rock. You lose.");
+            return result = -1; 
         } else if (playerSelection == "Paper" && computerSelection == "Scissors"){
-            return result = "Scissors beats paper. You lose.";
+            console.log("Scissors beats paper. You lose.");
+            return result = -1; 
         } else if (playerSelection == "Scissors" && computerSelection == "Rock"){
-            return result = "Rock beats Scissors. You lose.";
+            console.log("Rock beats Scissors. You lose.");
+            return result = -1; 
         } else if (playerSelection == computerSelection){
-            return result = "You tie";
+            console.log("You tie");
+            return result = 0;
         }
 }
-console.log(oneRound());
+function game(){
+    let win = 0
+    let lose = 0
+    oneRound();
+    if(result == 1){
+        console.log("Win Test");
+        win++;
+    } else if( result == -1){
+        console.log("lose test");
+        lose--;
+    }
+    console.log(win);
+    oneRound();
+    if(result == 1){
+        console.log("Win Test");
+        win++;
+    } else if( result == -1){
+        console.log("lose test");
+        lose--;
+    }
+    console.log(win);
+    oneRound();
+    if(result == 1){
+        console.log("Win Test");
+        win++;
+    } else if( result == -1){
+        console.log("lose test");
+        lose--;
+    }
+    console.log(win);
+    oneRound();
+    if(result == 1){
+        console.log("Win Test");
+        win++;
+    } else if( result == -1){
+        console.log("lose test");
+        lose--;
+    }
+    console.log(win);
+    oneRound();
+    if(result == 1){
+        console.log("Win Test");
+        win++;
+    } else if( result == -1){
+        console.log("lose test");
+        lose--;
+    }
+    console.log(win);
+    if(win > lose){
+        console.log("You won the round!");
+
+    } else if( win < lose) {
+        console.log("You lost the round");
+    } else{
+        console.log("You tied the computer");
+    }
+}
+game();
